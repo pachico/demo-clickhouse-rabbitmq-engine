@@ -1,0 +1,26 @@
+version: "3"
+
+services:
+  rabbitmq:
+    image: rabbitmq:3.8.9-management
+    ports:
+      - 15672:15672
+    environment:
+      - RABBITMQ_DEFAULT_USER=admin
+      - RABBITMQ_DEFAULT_PASS=admin
+    volumes:
+      - ./resources:/opt/resources
+    tmpfs:
+      - /var/lib/rabbitmq
+
+  clickhouse:
+    image: yandex/clickhouse-server:20.8.7.15
+    volumes:
+      - ./resources/clickhouse/config.xml:/etc/clickhouse-server/config.d/config.xml
+      - ./resources/clickhouse/init.sql:/opt/init.sql
+    tmpfs:
+      - /var/lib/clickhouse
+    deploy:
+      resources:
+        limits:
+          cpus: '0.05'

@@ -1,0 +1,6 @@
+<yandex>
+    <rabbitmq>
+        <username>admin</username>
+        <password>admin</password>
+    </rabbitmq>
+</yandex>
