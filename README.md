@@ -1,6 +1,6 @@
 # Demo ClickHouse RabbitMQ Engine
 
-This demos shows how to publish messages to `RabbitMQ` and then consume them from `ClickHouse`.
+This demo shows how to publish messages to `RabbitMQ` and then consume them from `ClickHouse`.
 
 ## Requirements
 
